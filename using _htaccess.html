@@ -1,0 +1,15 @@
+Using .htaccess
+
+You can also have Apache set environment variables for use in your scripts, via a .htaccess file, using SetEnv or in Rewrite rules. These variables must start with 'HTTP_' for security purposes.
+
+SetEnv HTTP_MY_VARIABLE "my value"
+
+Example:
+
+Inside .htaccess
+# ENV KEYS
+SetEnv HTTP_reCAPTCHA_site_key "6LcGL4waAAAAAGAjXtr8wwny2Qr9Wd57z-MRXysb"
+# END ENV KEYS
+
+Displaying on PHP
+<?= $_ENV["HTTP_reCAPTCHA_site_key"]; ?>
